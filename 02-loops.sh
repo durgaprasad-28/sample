@@ -1,0 +1,25 @@
+#!/bin/bash
+ID=$(id -u)
+LOGS_FOLDER="/var/log/shell-script"
+LOGS_FILE="/var/log/shell-script/$0.log"
+if [ $ID -gt 0 ]; then
+echo "please acces to the root user to install packages- INSTALLATION FAILED" | tee $LOGS_FILE
+exit 1
+fi
+mkdir -p $LOGS_FOLDER
+echo "insatlling nginx "
+VALIDATE() {
+if [ $1 -ne 0 ]; then
+echo "$2" | tee -a $LOGS_FILE
+exit 1
+else
+echo "$3" | tee -a $LOGS_FILE
+fi
+}
+for package in $@
+do
+dnf install $package -y &>> $LOGS_FILE
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED $package"
+done 
+
+
