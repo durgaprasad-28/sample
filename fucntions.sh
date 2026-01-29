@@ -17,6 +17,6 @@ dnf install nginx -y
 VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NGINX"
 dnf install mysql -y
 VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED MYSQL"
-dnf install nodejs -y
+dnf install nodeejs -y
 VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NODEJS"
 
