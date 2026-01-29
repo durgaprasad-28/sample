@@ -20,6 +20,6 @@ dnf install nginx -y &>> $LOGS_FILE
 VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NGINX"
 dnf install mysql -y &>> $LOGS_FILE
 VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED MYSQL"
-dnf install nodeejs -y &>> $LOGS_FILE
+dnf install nodejs -y &>> $LOGS_FILE
 VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NODEJS"
 
