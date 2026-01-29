@@ -1,12 +1,12 @@
 #!/bin/bash
 ID=$(id -u)
-LOGS_FOLDER=/var/log/shell-script
-LOGS_FILE=/var/log/shell-script/$0.log
+LOGS_FOLDER="/var/log/shell-script"
+LOGS_FILE="/var/log/shell-script/$0.log"
 if [ $ID -gt 0 ]; then
 echo "please acces to the root user to install packages- INSTALLATION FAILED"
 exit 1
 fi
-mkdir $LOGS_FOLDER
+mkdir -p $LOGS_FOLDER
 echo "insatlling nginx "
 VALIDATE() {
 if [ $1 -ne 0 ]; then
