@@ -10,16 +10,16 @@ mkdir -p $LOGS_FOLDER
 echo "insatlling nginx "
 VALIDATE() {
 if [ $1 -ne 0 ]; then
-echo "$2"
+echo "$2" | tee -a $LOGS_FILE
 exit 1
 else
-echo "$3"
+echo "$3" | tee -a $LOGS_FILE
 fi
 }
 dnf install nginx -y &>> $LOGS_FILE
-VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NGINX" | tee -a $LOGS_FILE
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NGINX"  
 dnf install mysql -y &>> $LOGS_FILE
-VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED MYSQL" | tee -a $LOGS_FILE
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED MYSQL"  
 dnf install nodejs -y &>> $LOGS_FILE
-VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NODEJS" | tee -a $LOGS_FILE
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NODEJS" 
 
