@@ -7,3 +7,7 @@ fi
 echo "insatlling nginx "
 dnf install nginx -y
 echo "SUCCESSFULLY INSTALLED NGINX"
+dnf install mysql -y
+echo "SUCCESSFULLY INSTALLED MYSQL"
+dnf install nodejs -y
+echo "SUCCESSFULLY INSTALLED NODEJS"
