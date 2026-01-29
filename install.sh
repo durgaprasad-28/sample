@@ -1,13 +1,29 @@
 #!/bin/bash
 ID=$(id -u)
 if [ $ID -gt 0 ]; then
-echo "please acces to the root user to install nginx- INSTALLATION FAILED"
+echo "please acces to the root user to install packages- INSTALLATION FAILED"
 exit 1
 fi
 echo "insatlling nginx "
 dnf install nginx -y
+if [ $? -ne 0 ]; then
+echo "check the command once"
+exit 1
+else
 echo "SUCCESSFULLY INSTALLED NGINX"
-dnf install mysql -y
+fi
+dnf install mysqll -y
+if [ $? -ne 0 ]; then
+echo "check the command once"
+exit 1
+else
 echo "SUCCESSFULLY INSTALLED MYSQL"
+fi
 dnf install nodejs -y
-echo "SUCCESSFULLY INSTALLED NODEJS"
+if [ $? -ne 0 ]; then
+echo "check the command once"
+exit 1
+else
+echo "SUCCESSFULLY INSTALLED NGINX"
+fi
+
