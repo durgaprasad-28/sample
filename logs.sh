@@ -17,9 +17,9 @@ echo "$3"
 fi
 }
 dnf install nginx -y &>> $LOGS_FILE
-VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NGINX" | tee $LOGS_FILE
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NGINX" | tee -a $LOGS_FILE
 dnf install mysql -y &>> $LOGS_FILE
-VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED MYSQL" | tee $LOGS_FILE
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED MYSQL" | tee -a $LOGS_FILE
 dnf install nodejs -y &>> $LOGS_FILE
-VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NODEJS" | tee $LOGS_FILE
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NODEJS" | tee -a $LOGS_FILE
 
