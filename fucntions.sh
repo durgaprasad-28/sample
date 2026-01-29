@@ -14,9 +14,9 @@ echo "$3"
 fi
 }
 dnf install nginx -y
-VALIDATE $? check the command SUCCESSFULLY INSTALLED NGINX
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NGINX"
 dnf install mysql -y
-VALIDATE $? check the command SUCCESSFULLY INSTALLED MYSQL
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED MYSQL"
 dnf install nodejs -y
-VALIDATE $? check the command SUCCESSFULLY INSTALLED NODEJS
+VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED NODEJS"
 
