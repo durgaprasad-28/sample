@@ -8,6 +8,6 @@ elif [ $NUM3 -lt 100 ]; then
 echo "the number is lesser than 100"
 elif [ $NUM3 -eq 100 ]; then
 echo "the number is equal to 100"
-elsee [ $NUM3 -ne 100 ]; then
+else [ $NUM3 -ne 100 ]; then
 echo "the number is not equal to 100"
 fi
