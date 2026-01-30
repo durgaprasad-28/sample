@@ -19,7 +19,7 @@ for package in $@
 do
    dnf list installed $package &>> $LOGS_FILE
    if [ $? -ne 0 ]; then
-   installing $package
+    echo "installing $package"
   dnf install $package -y &>> $LOGS_FILE
   VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED $package"
   else
