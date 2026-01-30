@@ -17,8 +17,10 @@ fi
 }
 for package in $@
 do
+   dnf list installed $package
    if [ $? -ne 0 ]; then
-  dnf installed $package -y &>> $LOGS_FILE
+   installing $package
+  dnf install $package -y &>> $LOGS_FILE
   VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED $package"
   else
    echo "already installed $package,ignore it" | tee -a $LOGS_FILE
