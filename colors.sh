@@ -7,4 +7,7 @@ N="\e[0m"
 PRINT="print this in"
 echo -e " $R $PRINT red color $N"
 echo -e " $B $PRINT blue color $N"
-echo -e " $B $PRINT green color $N"
+echo -e " $G $PRINT green color $N"
+echo -e " $Y $PRINT yellow color $N"
+echo -e " $N $PRINT white color $N"
+
