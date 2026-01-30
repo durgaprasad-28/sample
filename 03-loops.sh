@@ -10,6 +10,7 @@ mkdir -p $LOGS_FOLDER
 VALIDATE() {
 if [ $1 -ne 0 ]; then
 echo "$2" | tee -a $LOGS_FILE
+exit 1
 else
 echo "$3" | tee -a $LOGS_FILE
 fi
