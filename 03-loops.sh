@@ -21,7 +21,7 @@ do
   dnf install $package -y &>> $LOGS_FILE
   VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED $package"
   else
-   echo "already installed $package,ignore it" -y &>> $LOGS_FILE
+   echo "already installed $package,ignore it" &>> $LOGS_FILE
    fi 
 done 
 
