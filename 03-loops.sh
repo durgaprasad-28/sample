@@ -22,6 +22,7 @@ do
   VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED $package"
   else
    echo "already installed $package,ignore it"
+   fi
 done 
 
 
