@@ -18,10 +18,10 @@ fi
 for package in $@
 do
    if [ $? -ne 0 ]; then
-  dnf install $package -y &>> $LOGS_FILE
+  dnf installed $package -y &>> $LOGS_FILE
   VALIDATE $? "check the command" "SUCCESSFULLY INSTALLED $package"
   else
-   echo "already installed $package,ignore it" &>> $LOGS_FILE
+   echo "already installed $package,ignore it" | tee -a $LOGS_FILE
    fi 
 done 
 
