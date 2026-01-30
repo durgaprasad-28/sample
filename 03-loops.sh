@@ -17,7 +17,7 @@ fi
 }
 for package in $@
 do
-   dnf list installed $package
+   dnf list installed $package &>> $LOGS_FILE
    if [ $? -ne 0 ]; then
    installing $package
   dnf install $package -y &>> $LOGS_FILE
