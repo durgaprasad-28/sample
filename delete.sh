@@ -5,7 +5,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-if [ ! -d $logs_folder }; then
+if [ ! -d $logs_folder ]; then
 echo "your searching file doesnt exist"
 exit 1
 else
