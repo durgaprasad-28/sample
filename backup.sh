@@ -37,7 +37,7 @@ else
 while IFS= read -r content ; do
 echo "reading $content"
 rm -f $content
-echo "files are deleted ,they are : $files"
+echo "files are deleted ,they are : $content"
 done <<< $file
 fi
 
