@@ -9,7 +9,7 @@ Y="\e[33m"
 N="\e[0m"
 sourcedir=$1
 destdir=$2
-date=${3 :-14 }
+date=${3:-14}
 if [ $USERID -ne 0 ]; then
     echo -e "$R Please run this script with root user access $N" | tee -a $LOGS_FILE
     exit 1
