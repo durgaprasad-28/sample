@@ -34,6 +34,7 @@ fi
 file=$(find $LOGS_FOLDER -type f -name "*.log" -mtime +14)
 if [ -z $files ] ; then
 log "your folder is empty"
+exit 1
 else
 log "files to archive are  :$file"
 fi
