@@ -20,7 +20,7 @@ log () {
    echo " $(date "+%y-%m-%d %H-%M-%S") | $1" | tee -a $LOGS_FILE
 }
 if [ $# -lt 2 ] ; then
-log $R you have to give two files for backup $N
+log  you have to give two files for backup 
 exit 1
 fi
 if [ ! -d $sourcedir ] ; then
@@ -28,15 +28,15 @@ log no folder was there
 exit 1
 fi
 if [ ! -d $destdir ] ; then
-log $R no folder was there $N
+log  no folder was there 
 exit 1
 fi
 file=$(find $LOGS_FOLDER $-type f -name "*.log" -mtime +14)
-log $G files to archive are $N :$file
+log files to archive are  :$file
 archive=destdir/app-logs.tar.gz
 tar -czvf $archive $file
 if [ ! -f $archive ] ; then
-log $R no archive file is created $N
+log  no archive file is created 
 exit 1
 else
 while IFS= read -r content ; do
