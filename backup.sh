@@ -31,7 +31,7 @@ if [ ! -d $destdir ] ; then
 log  "no folder was there" 
 exit 1
 fi
-file=$(find $LOGS_FOLDER $-type f -name "*.log" -mtime +14)
+file=$(find $LOGS_FOLDER -type f -name "*.log" -mtime +14)
 if [ -z $files ] ; then
 log "your folder is empty"
 else
