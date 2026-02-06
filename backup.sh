@@ -38,7 +38,7 @@ else
 log "files to archive are  :$file"
 fi
 archive=destdir/app-logs.tar.gz
-tar -czvf $archive $file
+tar -czvf $archive $(find $LOGS_FOLDER $-type f -name "*.log" -mtime +14)
 if [ ! -f $archive ] ; then
 log  "no archive file is created" 
 exit 1
