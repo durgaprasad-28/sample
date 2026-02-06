@@ -17,7 +17,7 @@ fi
 
 mkdir -p $LOGS_FOLDER
 log () {
-    echo " $(date "%y-%m-%d" "%H-%M-%S) | $1 | tee -a $LOGS_FILE
+    echo " $(date "%y-%m-%d" "%H-%M-%S) | $1" | tee -a $LOGS_FILE
 }
 if [ $# -lt 2 ] ; then
 log $R you have to give two files for backup $N
@@ -40,8 +40,3 @@ rm -f $content
 echo "files are deleted ,they are : $content"
 done <<< $file
 fi
-
-
-
-
-
