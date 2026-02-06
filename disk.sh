@@ -5,6 +5,6 @@ partition_name=$(df -hT | grep -v Filesystem | awk '{print $7}')
 while IFS= read -r line ;
 do
 if [ echo "$line" -gt $limit ] ; then
-echo "disk usage is high,they are:-echo "$line"% - $partition_name"
+echo "disk  is high,they are:-echo "$line"% - $partition_name"
 fi
 done <<< usage
