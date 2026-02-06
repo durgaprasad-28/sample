@@ -32,13 +32,13 @@ log  "no folder was there"
 exit 1
 fi
 file=$(find $LOGS_FOLDER -type f -name "*.log" -mtime +14)
-if [ -z "{$files}" ] ; then
+if [ -z "{$file}" ] ; then
 log "your folder is empty"
 exit 1
 else
 log "files to archive are  :$file"
 fi
-archive=destdir/app-logs.tar.gz
+archive="$destdir/app-logs.tar.gz"
 tar -czvf $archive $(find $LOGS_FOLDER -type f -name "*.log" -mtime +14)
 if [ ! -f $archive ] ; then
 log  "no archive file is created" 
