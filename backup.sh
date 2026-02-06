@@ -17,15 +17,18 @@ fi
 
 mkdir -p $LOGS_FOLDER
 log () {
-    echo " $(date "%y-%m-%d" "%H-%M-%S) | $1" | tee -a $LOGS_FILE
+   echo " $(date "+%y-%m-%d %H-%M-%S") | $1" | tee -a $LOGS_FILE
 }
 if [ $# -lt 2 ] ; then
 log $R you have to give two files for backup $N
-if [ -d $sourcedir ] ; then
+exit 1
+if [ ! -d $sourcedir ] ; then
 log no folder was there
+exit 1
 fi
-if [ -d $destdir ] ; then
+if [ ! -d $destdir ] ; then
 log $R no folder was there $N
+exit 1
 fi
 file=$(find $LOGS_FOLDER $-type f -name "*.log" -mtime +14)
 log $G files to archive are $N :$file
@@ -33,6 +36,7 @@ archive=destdir/app-logs.tar.gz
 tar -czvf $archive $file
 if [ ! -f $archive ] ; then
 log $R no archive file is created $N
+exit 1
 else
 while IFS= read -r content ; do
 echo "reading $content"
