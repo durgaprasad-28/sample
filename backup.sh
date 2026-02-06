@@ -22,6 +22,7 @@ log () {
 if [ $# -lt 2 ] ; then
 log $R you have to give two files for backup $N
 exit 1
+fi
 if [ ! -d $sourcedir ] ; then
 log no folder was there
 exit 1
