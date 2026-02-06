@@ -31,8 +31,8 @@ if [ ! -d $destdir ] ; then
 log  "no folder was there" 
 exit 1
 fi
-file=$(find $LOGS_FOLDER -type f -name "*.log" -mtime +14)
-if [ -z "{$file}" ] ; then
+file=$(find $sourcedir-type f -name "*.log" -mtime +14)
+if [ -z "$file" ] ; then
 log "your folder is empty"
 exit 1
 else
