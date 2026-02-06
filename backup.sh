@@ -38,7 +38,7 @@ exit 1
 else
 log "files to archive are  :$file"
 fi
-archive="$destdir.tar.gz"
+archive="$destdir/app-logs.tar.gz"
 tar -zcvf $archive $file
 if [ ! -f $archive ] ; then
 log  "no archive file is created" 
