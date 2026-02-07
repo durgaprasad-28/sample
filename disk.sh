@@ -5,7 +5,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 limit=3
-ip_address= curl "http://169.254.169.254/latest/meta-data/local-ipv4" 
+ip_address=$(curl "http://169.254.169.254/latest/meta-data/local-ipv4")
 disk_info=$(df -hT | grep -v Filesystem)
 echo -e  "$R alert:high disk usage$N"
 while IFS= read -r line ;
