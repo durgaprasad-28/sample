@@ -6,7 +6,7 @@ alert=$4
 ip_address=$5
 message=$6
 EMAIL_BODY=$(sed -e "s/team_name/$3/g" -e "s/alert/$4/g" -e "s/ip_address/$5/g" -e "s/$messagey/$body/g" disk.html )
-body=$(echo $message | sed -e "s/'/'\\\\''/g)
+body=$(echo $message | sed -e "s/'/'\\\\''/g")
 {
 echo "To: $TO_ADDRESS"
 echo "Subject: $SUBJECT"
