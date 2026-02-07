@@ -17,4 +17,4 @@ message+="$partition_name-$usage% <br>"
 fi
 done <<< $disk_info
 echo -e "$message"
-sh mail.sh "dpworld726@gmail.com" "usage alert" "dpteam" "disk usage is high" "$ip_address" "$message"
+sh mail.sh "dpworld726@gmail.com" "usage alert" "dpteam" "disk usage" "$ip_address" "$message"
